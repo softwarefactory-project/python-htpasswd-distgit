@@ -6,7 +6,7 @@
 
 Name:           python-htpasswd
 Version:        0.1
-Release:        1%{checkout}%{?dist}
+Release:        2%{checkout}%{?dist}
 Summary:        %{sum}
 
 License:        MIT
@@ -19,7 +19,7 @@ BuildRequires:  python2-devel
 BuildRequires:  python-setuptools
 BuildRequires:  python-mock
 BuildRequires:  python-nose
-BuildRequires:  python2-future
+BuildRequires:  python-future
 BuildRequires:  python2-orderedmultidict
 BuildRequires:  openssl
 
@@ -29,7 +29,7 @@ Library for working with htpasswd user (only basic authorization) and group file
 %package -n python2-htpasswd
 
 Summary:        %sum
-Requires:       python2-future
+Requires:       python-future
 Requires:       python2-orderedmultidict
 Requires:       openssl
 
@@ -52,5 +52,8 @@ nosetests -v
 %{python2_sitelib}/*
 
 %changelog
+* Tue Apr 11 2017 Tristan Cacqueray <tdecacqu@redhat.com> - 0.1-202272017gitef677a5a
+- Depends on python-future instead of python2-future
+
 * Mon Feb 27 2017 Fabien Boucher <fboucher@redhat.com> - 0.1-102272017gitef677a5a
 - Initial packaging
